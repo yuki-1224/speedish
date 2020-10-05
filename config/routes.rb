@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
+  resources :restaurants
+
   root 'pages#index'
   get 'users/new'
-  
+
   get 'sessions/new'
 
   resources :users

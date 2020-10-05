@@ -1,0 +1,21 @@
+<div class="text-center">
+  <div class="container">
+    <h1>お店一覧</h1>
+    <div class="row">
+      <div class="col-md-2">
+        <div class="restaurant-summary-single">
+          <%= link_to restaurant_path(id: 1) do %>
+            <p>ハンバーグの竹</p>
+            <%= image_tag '/assets/ハンバーグの竹.jpg' %>
+          <% end %>
+        </div>
+        <div class="restaurant-summary-single">
+          <%= link_to restaurant_path(id: 2) do %>
+            <p>うどん軒･内</p>
+            <%= image_tag '/assets/うどん軒･内.jpg' %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
