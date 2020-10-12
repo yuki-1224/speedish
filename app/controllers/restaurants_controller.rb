@@ -4,6 +4,7 @@ class RestaurantsController < ApplicationController
 
   def show
     @restaurant = Restaurant.find(restaurant_params[:id])
+    @menus = @restaurant.menus
   end
 
   private

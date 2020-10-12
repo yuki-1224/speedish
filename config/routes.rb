@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :reserves, only: [:new, :create] do
+    collection do
+      get :complete
+    end
+  end
   resources :restaurants
 
   root 'pages#index'

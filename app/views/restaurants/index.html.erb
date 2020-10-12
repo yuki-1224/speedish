@@ -6,14 +6,16 @@
         <div class="restaurant-summary-single">
           <%= link_to restaurant_path(id: 1) do %>
             <p>ハンバーグの竹</p>
-            <%= image_tag '/assets/ハンバーグの竹.jpg' %>
+            <%= image_tag '/assets/ハンバーグの竹.jpg' %>
           <% end %>
+          <%= link_to "予約はこちら", new_reserf_path(restaurant_id: 1) %>
         </div>
         <div class="restaurant-summary-single">
           <%= link_to restaurant_path(id: 2) do %>
             <p>うどん軒･内</p>
-            <%= image_tag '/assets/うどん軒･内.jpg' %>
+            <%= image_tag '/assets/うどん軒･内.jpg' %>
           <% end %>
+          <%= link_to "予約はこちら", new_reserf_path(restaurant_id: 2) %>
         </div>
       </div>
     </div>

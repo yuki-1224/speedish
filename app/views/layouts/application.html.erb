@@ -25,16 +25,28 @@
         <ul class="nav navbar-nav navbar-right">
           <% if !logged_in? %>
             <li>
-              <%= link_to login_path do %>
+              <%= link_to new_user_path do %>
                 <p>新規登録</p>
               <% end %>
             </li>
-          <% end %>
             <li>
-              <%= link_to restaurants_path do %>
-                <p>お店一覧</p>
+              <%= link_to login_path do %>
+                <p>ログイン</p>
               <% end %>
             </li>
+          <% end %>
+          <li>
+            <%= link_to restaurants_path do %>
+              <p>お店一覧</p>
+            <% end %>
+          </li>
+          <% if logged_in? %>
+            <li>
+              <%= link_to logout_path, method: :delete do %>
+                <p>ログアウト</p>
+              <% end %>
+            </li>
+          <% end %>
         </ul>
       </div>
     </nav>

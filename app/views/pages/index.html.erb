@@ -3,15 +3,21 @@
     <h1>SPEEDISH</h1>
     <h2>忙しいあなたにもお店の味を</h2>
     <div class="row">
-      <div class="col-md-offset-3 col-md-3">
-        <%= link_to 'まずは予約だけ', restaurants_path, class: 'btn' %>
-      </div>
-      <div class="col-md-3">
-        <%= link_to 'ログインして注文も！', login_path, class: 'btn' %>
-      </div>
-      <div class="col-md-3">
-        <%= link_to '新規登録はこちら', new_user_path, class: 'btn' %>
-      </div>
+      <% if !logged_in? %>
+        <div class="col-md-offset-3 col-md-3">
+          <%= link_to 'まずは予約だけ', restaurants_path, class: 'btn' %>
+        </div>
+        <div class="col-md-3">
+          <%= link_to 'ログインして注文も！', login_path, class: 'btn' %>
+        </div>
+        <div class="col-md-3">
+          <%= link_to '新規登録はこちら', new_user_path, class: 'btn' %>
+        </div>
+      <% else %>
+        <div class="col-md-offset-3 col-md-3">
+          <%= link_to '注文はこちらから', restaurants_path, class: 'btn' %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

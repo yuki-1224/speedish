@@ -1,12 +1,24 @@
 <div class="text-center">
   <div class="container">
     <h1>
-      <%= @restaurant.name%>
+      <%= @restaurant.name %>
     </h1>
     <div class="row">
-      <div class="col-md-3">
-        <div class="restaurant-menu">
-
+      <div class="restaurant-menu">
+        <div class="col-md-2">
+          <% @menus.each do |menu| %>
+            <%= link_to "#" do %>
+              <div class="restaurant-menu-single">
+                <%= menu.name %>
+                <div class="menu-image">
+                  <%= image_tag menu.image.url %>
+                </div>
+                <div class="menu-price">
+                  <%= menu.price %>円
+                </div>
+              </div>
+            <% end %>
+          <% end %>
         </div>
       </div>
     </div>
