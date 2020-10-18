@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'orders/new'
   resources :reserves, only: [:new, :create] do
     collection do
       get :complete

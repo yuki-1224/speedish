@@ -1,0 +1,7 @@
+<%= @reserve.restaurant.name %>様,予約が入りました
+===============================================
+
+<%= @reserve.restaurant.name %>様、
+<%= @reserve.num_of_peo %>人
+<% d = @reserve.reserved_at %>
+<%= d.year %>年 <%= d.month %>月 <%= d.day %>日 <%= d.hour %>:<%= d.min %> 

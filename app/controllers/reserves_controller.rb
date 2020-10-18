@@ -8,6 +8,7 @@ class ReservesController < ApplicationController
     @reserve = Reserve.new(reserve_params)
     if @reserve.save
       redirect_to complete_reserves_path(id: @reserve.id)
+      ReserveMailer.reserve_email(@reserve).deliver_later
     else
       flash.now[:danger] = '予約できませんでした'
       @restaurant = Restaurant.find(@reserve.restaurant_id)
