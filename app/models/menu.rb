@@ -4,5 +4,6 @@ class Menu < ApplicationRecord
   validates :price, presence: true
 
   belongs_to :restaurant
+  has_many :orders
   mount_uploader :image, ImageUploader
 end

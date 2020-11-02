@@ -7,4 +7,9 @@ class User < ApplicationRecord
   validates :name, presence: true, length: {maximum: 15}
   validates :email, presence: true, uniqueness: true, format: {with: EMAIL_REGULAR}
   validates :password, presence: true, format: {with: PASS_REGULAR}
+
+  has_many :orders
+  has_many :reserves
+  has_many :favorites
+  has_many :favorite_restaurants, through: :favorites, source: 'restaurant'
 end

@@ -1,0 +1,18 @@
+<div class="text-center">
+  <div class="container">
+    <h2>ご注文ありがとうございました</h2>
+    <div class="row">
+      <div class="col-md-3">
+        <%= @reserve.restaurant.name %><br>
+        <%= @reserve.num_of_peo %>人<br>
+        <% d = @reserve.reserved_at %><br>
+        <%= d.year %>年 <%= d.month %>月 <%= d.day %>日 <%= d.hour %>:<%= d.min %><br>
+        <br>
+        <% @orders.each do |order| %>
+          <%= order.menu.name %>
+          <%= order.quanity %>つ<br>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

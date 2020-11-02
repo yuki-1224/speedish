@@ -1,10 +1,17 @@
 Rails.application.routes.draw do
-  get 'orders/new'
+  resources :orders, only: [:index, :new, :create, :destroy] do
+    collection do
+      get :complete
+      get :confirm
+    end
+  end
+
   resources :reserves, only: [:new, :create] do
     collection do
       get :complete
     end
   end
+
   resources :restaurants
 
   root 'pages#index'

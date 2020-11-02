@@ -1,0 +1,27 @@
+<div class="text-center">
+  <div class="container">
+    <h1>
+      <%= @restaurant.name %>
+    </h1>
+    <div class="row">
+      <div class="restaurant-menu">
+        <div class="col-md-2">
+          <% @menus.each do |menu| %>
+            <%= link_to new_order_path(menu_id: menu.id) do %>
+              <div class="restaurant-menu-single">
+                <%= menu.name %>
+                <div class="menu-image">
+                  <%= image_tag menu.image.url %>
+                </div>
+                <div class="menu-price">
+                  <%= menu.price %>円
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+        <%= link_to "注文を確認する", confirm_orders_path, class: 'btn'  %>
+      </div>
+    </div>
+  </div>
+</div>

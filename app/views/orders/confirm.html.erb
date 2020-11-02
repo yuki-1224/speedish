@@ -1,0 +1,21 @@
+<div class="text-center">
+  <div class="container">
+    <h2>予約注文確認</h2>
+    <div class="row">
+      <div class="col-md-3">
+        <%= @reserve.restaurant.name %><br>
+        <%= @reserve.num_of_peo %>人<br>
+        <% d = @reserve.reserved_at %><br>
+        <%= d.year %>年 <%= d.month %>月 <%= d.day %>日 <%= d.hour %>:<%= d.min %><br>
+        <br>
+        <% @orders.each do |order| %>
+          <%= link_to "注文を消去", order_path(id: order.id), method: :delete %>
+          <%= order.menu.name %>
+          <%= order.quanity %>つ<br>
+        <% end %>
+        <%= link_to "上記の内容で注文確定", complete_orders_path(id: @reserve.id), class: "btn" %><br>
+        <%= link_to "注文を続ける", orders_path(restaurant_id: @reserve.restaurant_id), class: "btn" %>
+      </div>
+    </div>
+  </div>
+</div>

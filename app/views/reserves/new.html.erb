@@ -5,7 +5,7 @@
       <div class="col-md-3">
         <h1><%= @restaurant.name %></h1>
         <div class="reserve-form">
-          <%= form_for @reserve do |f|%>
+          <%= form_for @reserve do |f| %>
             <div class="form-group">
               <%= f.label :num_of_peo, "来店人数" %>
               <%= f.number_field :num_of_peo %>
@@ -15,7 +15,11 @@
               <%= f.datetime_select :reserved_at, {} %>
             </div>
             <%= f.hidden_field :restaurant_id, :value => @restaurant.id %>
-            <%= f.submit 'この内容で予約する', class: 'btn-block' %>
+            <% if logged_in? %>
+              <%= f.submit '続いて注文', class: 'btn-block' %>
+            <% else %>
+              <%= f.submit 'この内容で予約する', class: 'btn-block' %>
+            <% end %>
           <% end %>
         </div>
       </div>
